@@ -1,69 +1,75 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 41, 255, 0.02) 0%,
+    rgba(0, 41, 255, 0) 100%
+  );
+  font-family: sans-serif;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+label,
+input {
+  display: block;
+  width: 100%;
+  padding-bottom: 10px;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background: #021a3e;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-top: 1.3em;
   cursor: pointer;
-  transition: border-color 0.25s;
+  padding: 10px 20px;
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: #224c8c;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+form {
+  background-color: #ffffff;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 9px 20px;
+  border: 1px solid #e1e2eb;
+  color: #102a43;
+  box-sizing: border-box;
+  font-size: 14px;
+  box-shadow: inset 0 2px 4px 0 rgba(206, 209, 224, 0.2);
+  border-radius: 3px;
+}
+
+.container {
+  width: 460px;
+  margin: 5em auto;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-list {
+  margin: 5em auto;
+  width: 460px;
+  min-height: 500px;
+}
+.todo-card {
+  width: 100%;
+  min-height: 100px;
+  cursor: pointer;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
