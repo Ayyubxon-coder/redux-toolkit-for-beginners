@@ -1,11 +1,16 @@
-import { useSelector } from 'react-redux';
 import { TodoCard, TodoForm } from './components';
 
 import './App.css';
+const todos = [
+  {
+    userId: 1,
+    id: 1,
+    title: 'delectus aut autem',
+    completed: false,
+  },
+];
 
 function App() {
-  const { todos } = useSelector((state) => state.todo);
-
   return (
     <div>
       <div className='container'>

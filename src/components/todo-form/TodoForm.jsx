@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../../features/todoSlice';
 
 export function TodoForm() {
-  const dispatch = useDispatch();
-
   const [todo, setTodo] = useState({
     title: '',
     description: '',
@@ -20,20 +16,13 @@ export function TodoForm() {
 
   const handleAddTodo = (e) => {
     e.preventDefault();
-    if (todo.title.trim() !== '' && todo.description.trim() !== '') {
-      dispatch(addTodo(todo));
-      setTodo({
-        title: '',
-        description: '',
-      });
-    }
   };
 
   return (
     <form onSubmit={handleAddTodo}>
       <div>
         <div>
-          <label htmlFor='title'>Name</label>
+          <label htmlFor='title'>Title</label>
           <input
             value={todo.title}
             onChange={handleChange}
@@ -42,16 +31,7 @@ export function TodoForm() {
             autoComplete='off'
           />
         </div>
-        <div>
-          <label htmlFor='description'>Email </label>
-          <input
-            value={todo.description}
-            onChange={handleChange}
-            type='text'
-            name='description'
-            autoComplete='off'
-          />
-        </div>
+
         <div>
           <button type='submit'>Submit</button>
         </div>
