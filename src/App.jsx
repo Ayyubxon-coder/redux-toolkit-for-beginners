@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { TodoCard, TodoForm } from './components';
 
 import './App.css';
+import { Loading } from './components/loading/Loading';
 
 function App() {
   const { todos } = useSelector((state) => state.todo);
@@ -12,7 +13,8 @@ function App() {
         <TodoForm />
       </div>
       <div className='todo-list'>
-        {todos?.map((todo) => (
+        <Loading />
+        {todos.map((todo) => (
           <TodoCard key={todo.id} {...todo} />
         ))}
       </div>

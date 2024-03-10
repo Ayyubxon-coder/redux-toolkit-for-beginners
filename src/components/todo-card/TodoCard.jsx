@@ -1,13 +1,18 @@
 import { useDispatch } from 'react-redux';
 import { removeTodo } from '../../features/todoSlice';
 
-export function TodoCard({ title, description, id }) {
+export function TodoCard({ title, id }) {
   const dispatch = useDispatch();
 
   return (
-    <div onClick={() => dispatch(removeTodo(id))} className='todo-card'>
+    <div className='todo-card'>
       <h3>{title}</h3>
-      <p>{description}</p>
+      <button
+        style={{ backgroundColor: 'red' }}
+        onClick={() => dispatch(removeTodo(id))}
+      >
+        Delete
+      </button>
     </div>
   );
 }

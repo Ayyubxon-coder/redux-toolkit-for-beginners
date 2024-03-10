@@ -1,31 +1,22 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../../features/todoSlice';
+import { addTodo, fetchTodos } from '../../features/todoSlice';
 
 export function TodoForm() {
   const dispatch = useDispatch();
 
-  const [todo, setTodo] = useState({
-    title: '',
-    description: '',
-  });
+  const [todo, setTodo] = useState('');
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setTodo({
-      ...todo,
-      [name]: value,
-    });
+    const { value } = e.target;
+    setTodo(value);
   };
 
   const handleAddTodo = (e) => {
     e.preventDefault();
-    if (todo.title.trim() !== '' && todo.description.trim() !== '') {
+    if (todo.trim() !== '') {
       dispatch(addTodo(todo));
-      setTodo({
-        title: '',
-        description: '',
-      });
+      setTodo('');
     }
   };
 
@@ -33,9 +24,9 @@ export function TodoForm() {
     <form onSubmit={handleAddTodo}>
       <div>
         <div>
-          <label htmlFor='title'>Name</label>
+          <label htmlFor='title'>Title</label>
           <input
-            value={todo.title}
+            value={todo}
             onChange={handleChange}
             type='text'
             name='title'
@@ -43,17 +34,15 @@ export function TodoForm() {
           />
         </div>
         <div>
-          <label htmlFor='description'>Email </label>
-          <input
-            value={todo.description}
-            onChange={handleChange}
-            type='text'
-            name='description'
-            autoComplete='off'
-          />
-        </div>
-        <div>
-          <button type='submit'>Submit</button>
+          <button disabled={!todo} type='submit'>
+            Submit
+          </button>
+          <button
+            style={{ marginLeft: 20 }}
+            onClick={() => dispatch(fetchTodos())}
+          >
+            Get todos
+          </button>
         </div>
       </div>
     </form>
