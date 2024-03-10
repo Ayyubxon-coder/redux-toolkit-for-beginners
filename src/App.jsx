@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
-import { TodoCard, TodoForm } from './components';
-import { Loading } from './components/loading/Loading';
+import { TodoCard, TodoForm, Loading } from './components';
 
 import './App.css';
 
