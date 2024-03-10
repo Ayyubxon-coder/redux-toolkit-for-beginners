@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { TodoCard, TodoForm } from './components';
+import { Loading } from './components/loading/Loading';
 
 import './App.css';
-import { Loading } from './components/loading/Loading';
 
 function App() {
   const { todos } = useSelector((state) => state.todo);
