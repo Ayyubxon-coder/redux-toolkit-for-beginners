@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 
 export function TodoForm() {
-  const [todo, setTodo] = useState({
-    title: '',
-    description: '',
-  });
+  const [todo, setTodo] = useState('');
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setTodo({
-      ...todo,
-      [name]: value,
-    });
+    const { value } = e.target;
+    setTodo(value);
   };
 
   const handleAddTodo = (e) => {
@@ -24,16 +18,19 @@ export function TodoForm() {
         <div>
           <label htmlFor='title'>Title</label>
           <input
-            value={todo.title}
+            value={todo}
             onChange={handleChange}
             type='text'
             name='title'
             autoComplete='off'
           />
         </div>
-
         <div>
           <button type='submit'>Submit</button>
+          <button style={{ marginLeft: 20 }}>Get todos</button>
+          <button style={{ marginLeft: 20, backgroundColor: 'red' }}>
+            Clear todos
+          </button>
         </div>
       </div>
     </form>

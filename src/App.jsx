@@ -1,14 +1,7 @@
 import { TodoCard, TodoForm } from './components';
 
 import './App.css';
-const todos = [
-  {
-    userId: 1,
-    id: 1,
-    title: 'delectus aut autem',
-    completed: false,
-  },
-];
+const todos = [];
 
 function App() {
   return (
