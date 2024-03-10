@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTodo, fetchTodos } from '../../features/todoSlice';
+import { addTodo, clearTodos, fetchTodos } from '../../features/todoSlice';
 
 export function TodoForm() {
   const dispatch = useDispatch();
@@ -42,6 +42,12 @@ export function TodoForm() {
             onClick={() => dispatch(fetchTodos())}
           >
             Get todos
+          </button>
+          <button
+            style={{ marginLeft: 20, backgroundColor: 'red' }}
+            onClick={() => dispatch(clearTodos())}
+          >
+            Clear todos
           </button>
         </div>
       </div>
